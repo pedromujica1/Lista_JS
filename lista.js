@@ -1,8 +1,13 @@
-const nameList = ["Aline","Otavio","Camila","Nareba","Jean","Julio","Julio Rodalo","Rany","Ti"]
+//push
+//pop
+//botstrap
+
+var nameList = ["Aline","Otavio","Camila","Nareba","Jean","Julio","Julio Rodalo","Rany","Ti"]
 
 const listEl = document.getElementById("list");
 const searchField = document.getElementById("searchField");
-searchField.addEventListener("input",inputHandler);
+add.addEventListener("click",adicionarNome);
+filtra.addEventListener("click",inputHandler);
 
 this.fillList()
 
@@ -15,12 +20,17 @@ function fillList(list=nameList){
     }
 }
 function inputHandler(){
+    searchField.addEventListener("input",inputHandler);
     const filteredlist = nameList.filter(el => {
-        const listItems = el.toLowerCase(); 
-        const searchWord = searchField.value.toLowerCase();
-        return listItems.includes(searchWord)
-    });
+    const listItems = el.toLowerCase(); 
+    const searchWord = searchField.value.toLowerCase();
+    return listItems.includes(searchWord)     });
     fillList(filteredlist);
 }
+function adicionarNome(list = nameList){
+    l
+    
+}
 
-
+    
+    
