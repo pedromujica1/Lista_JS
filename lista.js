@@ -1,17 +1,9 @@
-//push
-//pop
-//botstrap
-
-const nameList = ["Aline","Otavio","Camila","Nareba","Jean","Julio","Julio Rodalo","Rany","Ti"]
+const nameList = ["Naras","Narebas", "Pedro"]
 
 const listEl = document.getElementById("list");
 const searchField = document.getElementById("searchField");
 
-// const add = document.getElementById("add");
-// const filtra = document.getElementById("filtra");
-// const remove = document.getElementById("remove");
-// const selec = document.getElementById("selec");
-
+//Realiza a chamada de função ao clicar no botão.
 add.addEventListener("click",adicionarNome);
 filtra.addEventListener("click",inputHandler);
 remove.addEventListener("click",removerNome);
@@ -27,6 +19,34 @@ function fillList(list=nameList){
         listEl.appendChild(listItems);
     }
 }
+
+//Função adiciona o nome da lista por meio do método push
+function adicionarNome(listNew = []){
+    let new_name = searchField.value;
+    listNew = nameList;
+    listNew.push(new_name);
+
+    listEl.innerHTML="";
+    for (let i=0;i<listNew.length;i++){
+        let items = document.createElement("li");
+        items.innerHTML = listNew[i];
+        listEl.appendChild(items);
+    }
+}
+
+function removerNome(listNew = []){
+    let new_name = searchField.value;
+    listNew = nameList;
+    listNew.pop(new_name);
+
+    listEl.innerHTML="";
+    for (let i=0;i<listNew.length;i++){
+        let items = document.createElement("li");
+        items.innerHTML = listNew[i];
+        listEl.appendChild(items);
+    }
+}
+
 function inputHandler(){
     searchField.addEventListener("input",inputHandler);
     const filteredlist = nameList.filter(el => {
@@ -35,38 +55,19 @@ function inputHandler(){
     return listItems.includes(searchWord)});
     fillList(filteredlist);
 }
-function adicionarNome(lista = []){
-    let nova = searchField.value;
-    lista = nameList;
-    lista.push(nova);
-    //console.log(lista);
+
+function SelecNome(listNew=[]){
+    let nome = searchField.value;
+    listNew = nameList;
+    //Elimina o elemento pela posição que o nome digitado no input está
+    let novo_array =listNew.splice(listNew.indexOf(nome),1);
 
     listEl.innerHTML="";
-    for (let i=0;i<lista.length;i++){
-        let listItems = document.createElement("li");
-        listItems.innerHTML = lista[i];
-        listEl.appendChild(listItems);
+    for (let i=0;i<listNew.length;i++){
+        let items = document.createElement("li");
+        items.innerHTML = listNew[i];
+        listEl.appendChild(items);
     }
-}
-
-function removerNome(listaR = []){
-    let nova = searchField.value;
-    listaR = nameList;
-    listaR.pop(nova);
-    //console.log(lista);
-
-    listEl.innerHTML="";
-    for (let i=0;i<listaR.length;i++){
-        let listItems = document.createElement("li");
-        listItems.innerHTML = listaR[i];
-        listEl.appendChild(listItems);
-    }
-}
-
-function SelecNome(){
-
-
-
 }
 
     
