@@ -1,9 +1,12 @@
+
+
 body {
     background: #f1f1f1;
     display: flex;
     align-items: center;
     height: 100vh;    
     font-family: sans-serif;
+    margin: 0;
     
 }
 header {
@@ -52,4 +55,12 @@ li{
     width: 100%;
     padding: 8px 15px;
     margin: 5px 0;
+}
+.name-selected { 
+    color: #800000; 
+    font-weight: bold; 
+    font-size:20px ;
+}
+.normal-name { 
+    color: black; 
 }
