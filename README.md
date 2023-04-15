@@ -5,6 +5,6 @@
 - Matéria: Programação para Internet
 - Data: 03/04/2023
 
-Repositório dedicado à atividade feita em Javascript na aula de Programação Web.
+Repositório dedicado à atividade feita em Javascript usando listas e seus met na aula de Programação Web.
 
 
